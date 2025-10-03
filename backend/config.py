@@ -1,11 +1,12 @@
-from dotenv import load_dotenv
 import os
-import json
+from dotenv import load_dotenv
 import google.generativeai as genai
 
-
 load_dotenv()
-gemini_api_key=os.getenv("GEMINI_API_KEY")
-genai.configure(api_key=gemini_api_key)
-model=genai.GenerativeModel("gemini-1.5-flash")
+genai.configure(api_key=os.getenv("ERYTH_API_KEY"))
 
+# Use the correct Gemini model ID
+model = genai.GenerativeModel("gemini-1.5-flash")
+
+response = model.generate_content("Hello Gemini!")
+print(response.text)

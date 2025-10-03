@@ -1,6 +1,5 @@
-"use client";
 import { useState } from "react";
-import styles from "./styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 
 export default function Home(){
     const [query,setQuery]=useState("");
@@ -36,7 +35,7 @@ export default function Home(){
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
-          placeholder="Search for a term..."
+          placeholder="Search for a term in your report..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className={styles.input}
