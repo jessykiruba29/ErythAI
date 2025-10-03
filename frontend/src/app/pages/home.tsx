@@ -15,7 +15,7 @@ export default function Home(){
     formData.append("query", query);
     if (file) formData.append("file", file);
 
-    const res = await fetch("http://localhost:8000/explain", {
+    const res = await fetch("http://localhost:8000/explain" , {
       method: "POST",
       body: formData,
     });
